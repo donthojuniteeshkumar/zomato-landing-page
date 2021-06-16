@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,900;1,700;1,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Zomato- Largest Food Delivery Network</title>
  </head>
  <body>
     <header>
@@ -16,9 +16,27 @@
              <img src="assets/logo.png" alt="logo" class="navbar__logo" />
           </div>
           <div class="navbar__nav__items">
-             <button class="nav__item button__primary">Order Food</button>
+             <div class="nav__item">
+             <button class="button__primary hide__mobile">Order Food</button>
+             <button
+             class="button__primary hamburger__menu mobile__only"
+             id="hamburgermenu"
+             ></button>
+          </div>
           </div>
        </nav>
+       <div class="mobile__navbar__items mobile__only hamburger__menu__close">
+         <ul>
+           <li class="nav__item">Products</li>
+           <li class="nav__item">Restaurants</li>
+           <li class="nav__item">Pricing</li>
+           <li class="nav__item">About Us</li>
+         </ul>
+ 
+         <div class="nav__item">
+           <button class="button__primary">Order Food</button>
+         </div>
+       </div>
     </header>
 
     <main class="container">
@@ -27,6 +45,16 @@
       <section class="hero__container">
          <div class="hero__image__container">
             <img src="./assets/hero.jpg" alt="hero image" class="hero__image" />
+            <img
+            src="./assets/svg/heroShape.svg"
+            alt="hero image shape"
+            class="hero__image__shape"
+          />
+          <img
+            src="./assets/svg/herobgpattren.svg"
+            alt="hero image shape"
+            class="hero__image__pattren"
+          />
          </div>
          <div class="hero__description">
             <h1 class="hero__text">
@@ -105,6 +133,50 @@
             </div>
          </div>
       </section>
+      <section class="email__subcribe__container">
+         <div>
+           <h1 class="text-xl">Stay Updated</h1>
+           <div class="email__subcribe__input__field">
+             <div>
+               <input
+                 type="email"
+                 placeholder="email@email.com"
+                 class="email__input"
+               />
+             </div>
+             <button class="button__primary">Get Updates</button>
+           </div>
+         </div>
+       </section>
+ 
+       <section class="quote__container">
+         <div class="quote_image_overlay"></div>
+         <h3 class="quote_image_text">
+           When a man's stomach is full it makes no difference whether he is rich
+           or poor.
+         </h3>
+       </section>
     </main>
+    <footer>
+      <img src="./assets/logo.png" alt="logo" />
+      <ul>
+        <li>Pricing</li>
+        <li>Terms and condition</li>
+        <li>Partnership</li>
+        <li>Career</li>
+        <li>Contact</li>
+      </ul>
+    </footer>
+    <script>
+      const hamburgermenu = document.getElementById("hamburgermenu");
+      const mobileNavDropDown = document.querySelector(
+        ".mobile__navbar__items"
+      );
+      window.addEventListener("click", () => {
+        if (mobileNavDropDown.classList.contains("hamburger__menu__close"))
+          return mobileNavDropDown.classList.remove("hamburger__menu__close");
+        return mobileNavDropDown.classList.add("hamburger__menu__close");
+      });
+    </script>
  </body>
 </html>
